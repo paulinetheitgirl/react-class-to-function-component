@@ -30,6 +30,11 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.7",
+    "@tanstack/react-table": "^8.9.1",
+    "axios": "^1.4.0",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

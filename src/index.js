@@ -1,18 +1,20 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import ReactClass from './components/ReactClass';
-import { ReactFunction } from './components/ReactFunction';
+import {
+    QueryClient,
+    QueryClientProvider,
+  } from '@tanstack/react-query'
+import SpaceXLaunches from './components/SpaceX/SpaceXLaunches';
 import './styles/output.css';
 
+// Create a client
+const queryClient = new QueryClient();
+
 const App = () => {
-    const theDate = new Date();
-    return (<React.Fragment>
-            <div className='p-4'>
-                <ReactClass theDate={theDate}/>
-            </div>
-            <div className='p-4'>
-                <ReactFunction theDate={theDate}/>
-            </div>
-        </React.Fragment>);
+    return (
+        // Provide the query client
+        <QueryClientProvider client={queryClient}>
+            <SpaceXLaunches/>
+        </QueryClientProvider>);
  }
 ReactDOM.render(<App />, document.getElementById('app'));
